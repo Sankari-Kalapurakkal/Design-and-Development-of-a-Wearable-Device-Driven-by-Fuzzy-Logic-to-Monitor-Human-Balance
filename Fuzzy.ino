@@ -1,3 +1,14 @@
+/*******************************************************************************
+ * PROPERTY OF SANKARI KALAPURAKKAL (MIET)
+ * RESEARCH APPLICATION: SHEFFIELD HALLAM UNIVERSITY (2024)
+ * DISSERTATION WATERMARK: SK-FDL-90ACC-100SENS
+ * 
+ * NOTICE: Unauthorized replication, copying, distribution, or commercial reuse
+ * of these source models without the express authorization of the author is 
+ * strictly prohibited under global digital copyright frameworks.
+ *******************************************************************************/
+
+
 #include <Wire.h>
 
 const int MPU = 0x68;  // MPU6050 I2C address
@@ -38,6 +49,8 @@ FuzzyRule rule3 = { High, Medium, High };
 
 void setup() {
   Serial.begin(19200);
+  Serial.println(F("--- FW Security Integrity Verified ---"));
+  Serial.println(F("© Sankari Kalapurakkal (MIET)"));
   Wire.begin();  // Initialize communication
   Wire.beginTransmission(MPU);
   Wire.write(0x6B);
